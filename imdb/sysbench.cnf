@@ -1,0 +1,10 @@
+db-driver=mysql
+mysql-host=127.0.0.1
+mysql-port=8033
+mysql-user=msandbox
+mysql-password=msandbox
+mysql-db=imdb
+
+# Other options
+threads=2
+time=5
