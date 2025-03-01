@@ -2,7 +2,8 @@
 
 OS="$(uname)"
 
-build-sysbench() {
+
+get-repo() {
   local PROJECT="$1"
 
   cd src
@@ -14,12 +15,25 @@ build-sysbench() {
     cd ${PROJECT}
   fi
   ls
+}
 
+if-mac-deployment() {
   [[ "${OS}" == "Darwin" ]] && export MACOSX_DEPLOYMENT_TARGET=$(sw_vers -productVersion)
+}
+
+build-sysbench() {
+  local PROJECT="$1"
+
+  get-repo "${PROJECT}"
+  if-mac-deployment
+
   ./autogen.sh --with-psql
   ./configure
   make -j
   src/sysbench --version
+  echo "sudo make install"
+
+  return 0
 }
 
 usage() {
