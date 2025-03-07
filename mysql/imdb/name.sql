@@ -1,0 +1,10 @@
+SELECT * FROM name WHERE name = ?
+SELECT DISTINCT t.title, t.start_year, tp.category AS appearance FROM name n JOIN title_principal tp ON n.name_id = tp.name_id JOIN title t ON tp.title_id = t.title_id WHERE n.name = ? AND t.type = 'movie' ORDER BY t.start_year DESC;
+SELECT np.profession FROM name n JOIN name_profession np ON n.name_id = np.name_id WHERE n.name = ?;
+SELECT np.profession, COUNT(*) as appearances FROM name n JOIN name_profession np ON n.name_id = np.name_id WHERE n.name = ? GROUP BY np.profession ORDER BY 2 desc;
+SELECT t.title, t.start_year FROM name n JOIN title_principal tp ON n.name_id = tp.name_id JOIN title t ON tp.title_id = t.title_id WHERE n.name = ? AND t.type = 'movie' and tp.category = 'director' ORDER BY t.start_year DESC;
+SELECT t.title, r.average_rating, r.num_votes FROM name n JOIN title_principal tp ON n.name_id = tp.name_id JOIN title t ON tp.title_id = t.title_id JOIN title_rating r ON t.title_id = r.title_id WHERE n.name = ? AND tp.category IN ('actor', 'actress') AND t.type = 'movie' AND num_votes > 10000 ORDER BY r.average_rating DESC LIMIT 10;
+SELECT n.name, tnc.character_name, t.title AS movie, t.start_year FROM name n JOIN title_name_character tnc ON n.name_id = tnc.name_id JOIN title t ON tnc.title_id = t.title_id WHERE n.name = ? AND   t.type = 'movie' ORDER BY t.start_year DESC;
+SELECT t.title, t.start_year, tp.category FROM name n JOIN title_principal tp ON n.name_id = tp.name_id JOIN title t ON tp.title_id = t.title_id WHERE n.name = ? ORDER BY t.start_year DESC LIMIT 1;
+SELECT DISTINCT CONCAT(n.name," was a ", tp.category, " in the movie '",t.title,"' (", IFNULL(t.start_year,"unknown"),")") AS description FROM name n JOIN title_principal tp ON n.name_id = tp.name_id JOIN title t ON tp.title_id = t.title_id WHERE n.name = ? AND t.type = 'movie';
+SELECT CONCAT (n.name," played '",tnc.character_name,"' in the movie '", t.title,"' (",IFNULL(t.start_year,'unknown'),")") AS description FROM name n JOIN title_name_character tnc ON n.name_id = tnc.name_id JOIN title t ON tnc.title_id = t.title_id WHERE n.name = ? AND t.type = 'movie';

@@ -1,7 +1,7 @@
 # IMDb Sysbench Test
 
 This directory contains a MySQL benchmark test setup to be used with Sysbench that runs tests against
-an [enhanced IMDb dataset](https://github.com/ronaldbradford/data/tree/main/mysql-data/imdb) (~ 30GB).
+an [enhanced IMDb dataset](https://github.com/ronaldbradford/data/tree/main/mysql-data/imdb) (~ 20GB).
 This data is based on the source [IMDb Non-Commercial Datasets](https://developer.imdb.com/non-commercial-datasets/).
 
 ## Prerequisites
