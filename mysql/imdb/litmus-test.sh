@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+WARMUP_TIME=2 TIME=10 WARMDOWN_TIME=3 THREADS="2" ./benchmark.sh
+unset WARMUP_TIME TIME WARMDOWN_TIME THREADS
