@@ -12,10 +12,10 @@ if len(sys.argv) < 2:
 plt.figure(figsize=(10, 6))
 
 # Define a set of distinct colors for multiple lines
-colors = ["#3498DB", "#2ECC71", "#F39C12", "#9B59B6", "#1ABC9C", "#D35400", "#7F8C8D", "#E74C3C"]
+colors = ["#3498DB", "#2ECC71", "#F39C12", "#9B59B6", "#1ABC9C", "#D35400", "#7F8C8D", "#FF33A8"]
 
 # Regular expression to extract NN from filenames like 00NN.tsv
-pattern = re.compile(r"00(\d+)\.tsv")
+pattern = re.compile(r"0(\d+)\.tsv")
 
 # Plot each file
 for i, filename in enumerate(sys.argv[1:]):

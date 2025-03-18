@@ -9,7 +9,7 @@ rm -f ${INPUT_FILE_PATTERN}*.tsv
 for INPUT_FILE in $(ls ${INPUT_FILE_PATTERN}*.txt); do
   OUTPUT_FILE=$(sed -e "s/txt/tsv/" <<< ${INPUT_FILE})
   [[ ! -s "${INPUT_FILE}" ]] && echo "ERROR: '${INPUT_FILE}' not found" && exit 1
-  MAX_VALUE=$(grep "95th percentile" ${INPUT_FILE} | awk '{print $3}')
+  MAX_VALUE=$(grep "95th percentile:" ${INPUT_FILE} | awk '{print $3}')
   awk -v max="$MAX_VALUE" '
 /Latency histogram/ { found=1; next }
 /SQL statistics/ { found=0 }
@@ -22,8 +22,6 @@ found && NF >= 3 {
 done
 
 python plot-latency.py ${INPUT_FILE_PATTERN}*.tsv
-
-
-for INPUT_FILE in $(ls ${INPUT_FILE_PATTERN}*.txt); do
-  grep "queries:" ${INPUT_FILE} | cut -d'(' -f2 | cut -d' ' -f1
-done
+PNG_FILE="${INPUT_FILE_PATTERN}latency.png"
+echo "Target image: '${PNG_FILE}'"
+mv latency_chart.png "${PNG_FILE}"
