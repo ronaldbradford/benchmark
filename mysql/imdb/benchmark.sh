@@ -18,7 +18,8 @@ CONFIG_FILE="${CONFIG_FILE:-sysbench.cnf}"
 
 
 info() {
-  echo "INFO:  $*"
+  NOW=$(date +%Y%m%d.%H%M%S%z)
+  echo "[${NOW}] INFO:  $*"
 }
 
 initialize() {
