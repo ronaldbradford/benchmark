@@ -17,16 +17,16 @@ A deeper dive into the [Small Datum](https://smalldatum.blogspot.com/) available
 
 The answer will depend on who is asked and what product(s) are being evaluated. Generally the most important measurements for comparison include:
 
-1. Throughput
-2. latency
+1. Query Throughput
+2. Query Latency
 3. Runtime Resource Utilization (e.g. CPU, RAM, I/O, Network)
-4. Storage
+4. Data Storage
 
 ## The Original 1 Billion Rows
 
-While it's common now to hear about various 1 Billion row benchmarks, we need to recognize one the orginal architects behind this number. Tim Callaghan (yes related to Mark) created the orginal `iibench` (Index Insertion Benchmark) 1 Billion row challenge more than a decade ago.  [1 Billion Insertions – The Wait is Over!](https://www.percona.com/blog/1-billion-insertions-the-wait-is-over/)  published - January 26, 2012.
+While it's common now to hear about various 1 Billion row benchmarks, we need to recognize one the original architects behind this number. Tim Callaghan (yes related to Mark) created the orginal `iibench` (Index Insertion Benchmark) 1 Billion row challenge more than a decade ago.  [1 Billion Insertions – The Wait is Over!](https://www.percona.com/blog/1-billion-insertions-the-wait-is-over/)  published - January 26, 2012.
 
-Some other examples:
+Some other 1 Billion Row (1br) examples:
 
 - [iibench implemented as a sysbench workload](https://mysqlperf.github.io/mysql/sysbench-iibench/) [source](https://github.com/Dmitree-Max/sysbench-iibench)
 - [The One Billion Row Challenge](https://www.morling.dev/blog/one-billion-row-challenge/) - [1brc](https://github.com/gunnarmorling/1brc)
@@ -37,10 +37,10 @@ Some other examples:
 There are numerous products that perform benchmarks for given workloads, datasets and products. This is a short list of common benchmarks.
 
 - [HammerDB](https://www.hammerdb.com/) is a product that supports a wider range of RDBMS products.
-- [Yahoo! Cloud Serving Benchmark (YCSB)](https://ycsb.site)
-- [ClickBench](https://benchmark.clickhouse.com/) -  a Benchmark For Analytical DBMS
-- [JSONBench](https://jsonbench.com/) - a Benchmark For Data Analytics On JSON
-- [NoSQLBench](https://github.com/nosqlbench/nosqlbench) - NoSQL Benchmarking Suite
-- [BMK-kit](http://dimitrik.free.fr/blog/posts/mysql-perf-bmk-kit.html) - MySQL Performance : Benchmark kit (BMK-kit)
-- [dim_STAT](http://dimitrik.free.fr/) - high-level and detailed, monitoring and performance analysis of Solaris, Linux, and other UNIX systems
-- [TPC](https://www.tpc.org/) - Transaction Processing Performance Council benchmarks
+- [Yahoo! Cloud Serving Benchmark (YCSB)](https://ycsb.site) - a NoSQL database benchmark.
+- [ClickBench](https://benchmark.clickhouse.com/) -  a Benchmark For Analytical DBMS.
+- [JSONBench](https://jsonbench.com/) - a Benchmark For Data Analytics On JSON.
+- [NoSQLBench](https://github.com/nosqlbench/nosqlbench) - NoSQL Benchmarking Suite.
+- [BMK-kit](http://dimitrik.free.fr/blog/posts/mysql-perf-bmk-kit.html) - MySQL Performance : Benchmark kit.
+- [dim_STAT](http://dimitrik.free.fr/) - high-level and detailed, monitoring and performance analysis of Solaris, Linux, and other UNIX systems.
+- [TPC](https://www.tpc.org/) - Transaction Processing Performance Council benchmarks.
