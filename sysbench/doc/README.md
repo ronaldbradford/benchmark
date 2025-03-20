@@ -11,7 +11,7 @@ This documentation focusses on a detailed analysis of the `sysbench` database ec
 - [`sysbench` Arguments](ARGS.md)
 - [`sysbench` Tests](TESTS.md) aggregated list
 
-A deeper dive into the [Small Datum](https://smalldatum.blogspot.com/) available [tests](SMALLDATUM.md)
+A deeper dive into the [Small Datum](https://smalldatum.blogspot.com/) available [tests](SMALLDATUM.md).
 
 ## What is Important with Benchmarking?
 

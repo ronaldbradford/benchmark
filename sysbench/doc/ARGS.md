@@ -1,6 +1,6 @@
+# `sysbench` Command Line Arguments
 
-
-`sysbench` accepts the following arguments
+`sysbench` accepts the following arguments with version `1.0.20`.
 
 ```
 --config-file=

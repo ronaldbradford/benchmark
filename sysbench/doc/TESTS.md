@@ -27,4 +27,5 @@ The following is a list of Lua scripts online that can be found for `sysbench` d
 | [oltp_read_only_q3](https://github.com/mdcallag/mytools/blob/master/bench/sysbench.lua/lua/oltp_read_only_q1.lua)| Mark Callaghan||subset of `oltp_read_only` sum_ranges|
 | [oltp_read_only_q4](https://github.com/mdcallag/mytools/blob/master/bench/sysbench.lua/lua/oltp_read_only_q1.lua)| Mark Callaghan||subset of `oltp_read_only` order_ranges|
 | [oltp_read_only_q5](https://github.com/mdcallag/mytools/blob/master/bench/sysbench.lua/lua/oltp_read_only_q1.lua)| Mark Callaghan|| subset of `oltp_read_only` distinct_ranges |
+| [iibench.lua](https://github.com/Dmitree-Max/sysbench-iibench/blob/main/iibench.lua) | Dmitrii Maximenko ||
 | [core.lua](https://github.com/ronaldbradford/benchmark/blob/main/mysql/imdb/core.lua) | Ronald Bradford | `type` | Runs configurable SELECT SQL and data per `type` |
