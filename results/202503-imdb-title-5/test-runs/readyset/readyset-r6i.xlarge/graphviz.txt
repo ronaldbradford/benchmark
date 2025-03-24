@@ -1,0 +1,196 @@
+digraph {
+    fontsize=10    node [shape=record, fontsize=10]
+    subgraph cluster_d12 {
+    label = "Domain 12";
+    style=filled;
+    color=grey97;
+        n27 [style="filled", fillcolor="/set312/1", label="{ { 27 / l1    } | (ingress) | unsharded }"]
+    n24 [style="filled", fillcolor="/set312/1", label="{ { 24 / l0 / q_9e534bf4da3adc8c | ◕ &nbsp;(963) | 358.39 KiB } | (reader / ⚷: HashMap([3, 0])) | unsharded }"]
+
+    }
+    subgraph cluster_d2 {
+    label = "Domain 2";
+    style=filled;
+    color=grey97;
+        n3 [style="filled", fillcolor="/set312/3", label="{ 3 / l0 | dropped }"]
+
+    }
+    subgraph cluster_d11 {
+    label = "Domain 11";
+    style=filled;
+    color=grey97;
+        n20 [style="filled", fillcolor="/set312/12", label="{ { 20 / l1    } | (ingress) | unsharded }"]
+    n17 [style="filled", fillcolor="/set312/12", label="{ { 17 / l0 / q_e9be53304cb3503b | ◕ &nbsp;(963) | 569.86 KiB } | (reader / ⚷: HashMap([1, 2])) | unsharded }"]
+
+    }
+    subgraph cluster_d14 {
+    label = "Domain 14";
+    style=filled;
+    color=grey97;
+        n42 [style="filled", fillcolor="/set312/3", label="{ { 42 / l0 / q_415b6a680a2b66dd | ◕ &nbsp;(963) | 4.18 MiB } | (reader / ⚷: HashMap([2, 3])) | unsharded }"]
+    n47 [style="filled", fillcolor="/set312/3", label="{ { 47 / l1    } | (ingress) | unsharded }"]
+
+    }
+    subgraph cluster_d10 {
+    label = "Domain 10";
+    style=filled;
+    color=grey97;
+        n12 [style="filled", fillcolor="/set312/11", label="{ { 12 / l0 / q_d4ac544dd05a54f6 | ◕ &nbsp;(963) | 654.48 KiB } | (reader / ⚷: HashMap([2, 3])) | unsharded }"]
+    n13 [style="filled", fillcolor="/set312/11", label="{ { 13 / l1    } | (ingress) | unsharded }"]
+
+    }
+    subgraph cluster_d6 {
+    label = "Domain 6";
+    style=filled;
+    color=grey97;
+        n28 [style="filled", fillcolor="/set312/7", label="{ 28 / l4 | (egress) | unsharded }"]
+    n23 [style="filled", fillcolor="/set312/7", label="{{ 23 / l2 / q_d28148bb06654865_project_reorder | π[3, 10, 11, 2]    } | [0] title : VarChar(600), \n[1] average_rating : Numeric(3, 1), \n[2] num_votes : Int, \n[3] type : VarChar(12) | unsharded}"]
+    n25 [style="filled", fillcolor="/set312/7", label="{ { 25 / l3 | ◕ &nbsp;(963) | 511.53 KiB } | (ingress) | unsharded }"]
+    n22 [style="filled", fillcolor="/set312/7", label="{{ 22 / l1 / q_d28148bb06654865_n16 | [25:0, 25:1, 25:2, 25:3, 25:4, 25:5, 25:6, 25:7, 25:8, 25:9, 7:1, 7:2] 25:(0) ⋈ 7:(0)    } | [0] title_id : Int, \n[1] tconst : Char(10), \n[2] type : VarChar(12), \n[3] title : VarChar(600), \n[4] original_title : VarChar(600), \n[5] is_adult : TinyInt, \n[6] start_year : SmallInt, \n[7] end_year : SmallInt, \n[8] run_time_mins : SmallInt, \n[9] updated : Timestamp(0), \n[10] average_rating : Numeric(3, 1), \n[11] num_votes : Int | unsharded}"]
+    n7 [style="filled", fillcolor="/set312/7", label="{ { 7 / l0 / imdb.title_rating | B | ● &nbsp;(~1518890) } | [0] title_id : Int, \n[1] average_rating : Numeric(3, 1), \n[2] num_votes : Int | unsharded }"]
+
+    }
+    subgraph cluster_d8 {
+    label = "Domain 8";
+    style=filled;
+    color=grey97;
+        n43 [style="filled", fillcolor="/set312/9", label="{ { 43 / l3 | ◕ &nbsp;(2357) | 4.87 MiB } | (ingress) | unsharded }"]
+    n46 [style="filled", fillcolor="/set312/9", label="{ 46 / l4 | (egress) | unsharded }"]
+    n9 [style="filled", fillcolor="/set312/9", label="{ { 9 / l0 / imdb.name | B | ● &nbsp;(~14235647) } | [0] name_id : Int, \n[1] nconst : Char(10), \n[2] name : VarChar(120), \n[3] born : SmallInt, \n[4] died : SmallInt, \n[5] updated : Timestamp(0) | unsharded }"]
+    n39 [style="filled", fillcolor="/set312/9", label="{{ 39 / l2 / q_af34021134694bc_n29 | [43:0, 43:1, 43:2, 43:3, 43:4, 43:5, 9:1, 9:2, 9:3, 9:4, 9:5] 43:(1) ⋈ 9:(0)    } | [0] title_id : Int, \n[1] name_id : Int, \n[2] ordering : TinyInt, \n[3] category : VarChar(20), \n[4] job : VarChar(500), \n[5] characters : Text(citext), \n[6] nconst : Char(10), \n[7] name : VarChar(120), \n[8] born : SmallInt, \n[9] died : SmallInt, \n[10] updated : Timestamp(0) | unsharded}"]
+    n36 [style="filled", fillcolor="/set312/9", label="{ 36 / l1 | (egress) | unsharded }"]
+
+    }
+    subgraph cluster_d0 {
+    label = "Domain 0";
+    style=filled;
+    color=grey97;
+        n1 [style="filled", fillcolor="/set312/1", label="{ 1 / l0 | dropped }"]
+
+    }
+    subgraph cluster_d13 {
+    label = "Domain 13";
+    style=filled;
+    color=grey97;
+        n32 [style="filled", fillcolor="/set312/2", label="{ { 32 / l0 / q_e98213f9fe7761ad | ◕ &nbsp;(963) | 1.98 MiB } | (reader / ⚷: HashMap([2, 3])) | unsharded }"]
+    n37 [style="filled", fillcolor="/set312/2", label="{ { 37 / l1    } | (ingress) | unsharded }"]
+
+    }
+    subgraph cluster_d7 {
+    label = "Domain 7";
+    style=filled;
+    color=grey97;
+        n34 [style="filled", fillcolor="/set312/8", label="{ 34 / l1 | (egress) | unsharded }"]
+    n8 [style="filled", fillcolor="/set312/8", label="{ { 8 / l0 / imdb.title_name_character | B | ● &nbsp;(~43605612) } | [0] tnc_id : Int, \n[1] title_id : Int, \n[2] name_id : Int, \n[3] character_name : VarChar(500) | unsharded }"]
+
+    }
+    subgraph cluster_d9 {
+    label = "Domain 9";
+    style=filled;
+    color=grey97;
+        n44 [style="filled", fillcolor="/set312/10", label="{ 44 / l1 | (egress) | unsharded }"]
+    n10 [style="filled", fillcolor="/set312/10", label="{ { 10 / l0 / imdb.title_principal | B | ● &nbsp;(~89736004) } | [0] title_id : Int, \n[1] name_id : Int, \n[2] ordering : TinyInt, \n[3] category : VarChar(20), \n[4] job : VarChar(500), \n[5] characters : Text(citext) | unsharded }"]
+
+    }
+    subgraph cluster_d4 {
+    label = "Domain 4";
+    style=filled;
+    color=grey97;
+        n41 [style="filled", fillcolor="/set312/5", label="{{ 41 / l15 / q_af34021134694bc_project_reorder | π[7, 3, 12, 13]    } | [0] name : VarChar(120), \n[1] category : VarChar(20), \n[2] type : VarChar(12), \n[3] title : VarChar(600) | unsharded}"]
+    n29 [style="filled", fillcolor="/set312/5", label="{{ 29 / l8 / q_e639fb0e7684abdb_n22 | [33:0, 33:1, 33:2, 33:3, 5:1, 5:2, 5:3, 5:4, 5:5, 5:6, 5:7, 5:8, 5:9] 33:(1) ⋈ 5:(0) | ◕ &nbsp;(963) | 4.27 MiB } | [0] tnc_id : Int, \n[1] title_id : Int, \n[2] name_id : Int, \n[3] character_name : VarChar(500), \n[4] tconst : Char(10), \n[5] type : VarChar(12), \n[6] title : VarChar(600), \n[7] original_title : VarChar(600), \n[8] is_adult : TinyInt, \n[9] start_year : SmallInt, \n[10] end_year : SmallInt, \n[11] run_time_mins : SmallInt, \n[12] updated : Timestamp(0) | unsharded}"]
+    n18 [style="filled", fillcolor="/set312/5", label="{ { 18 / l5 | ◕ &nbsp;(2357) | 315.39 KiB } | (ingress) | unsharded }"]
+    n31 [style="filled", fillcolor="/set312/5", label="{{ 31 / l10 / q_e639fb0e7684abdb_project_reorder | π[2, 8, 10, 11]    } | [0] name : VarChar(120), \n[1] character_name : VarChar(500), \n[2] type : VarChar(12), \n[3] title : VarChar(600) | unsharded}"]
+    n38 [style="filled", fillcolor="/set312/5", label="{ 38 / l13 | (egress) | unsharded }"]
+    n16 [style="filled", fillcolor="/set312/5", label="{{ 16 / l4 / q_4f5d7e3ef695afc9_project_reorder | π[1, 3, 4]    } | [0] genre : VarChar(20), \n[1] type : VarChar(12), \n[2] title : VarChar(600) | unsharded}"]
+    n11 [style="filled", fillcolor="/set312/5", label="{{ 11 / l1 / q_37743bd14fb3111d_project_reorder | π[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]    } | [0] title_id : Int, \n[1] tconst : Char(10), \n[2] type : VarChar(12), \n[3] title : VarChar(600), \n[4] original_title : VarChar(600), \n[5] is_adult : TinyInt, \n[6] start_year : SmallInt, \n[7] end_year : SmallInt, \n[8] run_time_mins : SmallInt, \n[9] updated : Timestamp(0) | unsharded}"]
+    n14 [style="filled", fillcolor="/set312/5", label="{ 14 / l2 | (egress) | unsharded }"]
+    n15 [style="filled", fillcolor="/set312/5", label="{{ 15 / l3 / q_4f5d7e3ef695afc9_n11 | [18:0, 18:1, 5:1, 5:2, 5:3, 5:4, 5:5, 5:6, 5:7, 5:8, 5:9] 18:(0) ⋈ 5:(0)    } | [0] title_id : Int, \n[1] genre : VarChar(20), \n[2] tconst : Char(10), \n[3] type : VarChar(12), \n[4] title : VarChar(600), \n[5] original_title : VarChar(600), \n[6] is_adult : TinyInt, \n[7] start_year : SmallInt, \n[8] end_year : SmallInt, \n[9] run_time_mins : SmallInt, \n[10] updated : Timestamp(0) | unsharded}"]
+    n26 [style="filled", fillcolor="/set312/5", label="{ 26 / l7 | (egress) | unsharded }"]
+    n5 [style="filled", fillcolor="/set312/5", label="{ { 5 / l0 / imdb.title | B | ● &nbsp;(~11131061) } | [0] title_id : Int, \n[1] tconst : Char(10), \n[2] type : VarChar(12), \n[3] title : VarChar(600), \n[4] original_title : VarChar(600), \n[5] is_adult : TinyInt, \n[6] start_year : SmallInt, \n[7] end_year : SmallInt, \n[8] run_time_mins : SmallInt, \n[9] updated : Timestamp(0) | unsharded }"]
+    n21 [style="filled", fillcolor="/set312/5", label="{ 21 / l6 | (egress) | unsharded }"]
+    n45 [style="filled", fillcolor="/set312/5", label="{ { 45 / l16 | ◕ &nbsp;(2357) | 8.11 MiB } | (ingress) | unsharded }"]
+    n33 [style="filled", fillcolor="/set312/5", label="{ { 33 / l11 | ◕ &nbsp;(2357) | 1.58 MiB } | (ingress) | unsharded }"]
+    n48 [style="filled", fillcolor="/set312/5", label="{ 48 / l17 | (egress) | unsharded }"]
+    n30 [style="filled", fillcolor="/set312/5", label="{{ 30 / l9 / q_e639fb0e7684abdb_n23 | [35:0, 35:1, 35:2, 35:3, 35:4, 35:5, 29:0, 29:1, 29:3, 29:4, 29:5, 29:6, 29:7, 29:8, 29:9, 29:10, 29:11, 29:12] 35:(0) ⋈ 29:(2)    } | [0] name_id : Int, \n[1] nconst : Char(10), \n[2] name : VarChar(120), \n[3] born : SmallInt, \n[4] died : SmallInt, \n[5] updated : Timestamp(0), \n[6] tnc_id : Int, \n[7] title_id : Int, \n[8] character_name : VarChar(500), \n[9] tconst : Char(10), \n[10] type : VarChar(12), \n[11] title : VarChar(600), \n[12] original_title : VarChar(600), \n[13] is_adult : TinyInt, \n[14] start_year : SmallInt, \n[15] end_year : SmallInt, \n[16] run_time_mins : SmallInt, \n[17] updated : Timestamp(0) | unsharded}"]
+    n35 [style="filled", fillcolor="/set312/5", label="{ { 35 / l12 | ◕ &nbsp;(11557) | 1.67 MiB } | (ingress) | unsharded }"]
+    n40 [style="filled", fillcolor="/set312/5", label="{{ 40 / l14 / q_af34021134694bc_n30 | [45:0, 45:1, 45:2, 45:3, 45:4, 45:5, 45:6, 45:7, 45:8, 45:9, 45:10, 5:1, 5:2, 5:3, 5:4, 5:5, 5:6, 5:7, 5:8, 5:9] 45:(0) ⋈ 5:(0)    } | [0] title_id : Int, \n[1] name_id : Int, \n[2] ordering : TinyInt, \n[3] category : VarChar(20), \n[4] job : VarChar(500), \n[5] characters : Text(citext), \n[6] nconst : Char(10), \n[7] name : VarChar(120), \n[8] born : SmallInt, \n[9] died : SmallInt, \n[10] updated : Timestamp(0), \n[11] tconst : Char(10), \n[12] type : VarChar(12), \n[13] title : VarChar(600), \n[14] original_title : VarChar(600), \n[15] is_adult : TinyInt, \n[16] start_year : SmallInt, \n[17] end_year : SmallInt, \n[18] run_time_mins : SmallInt, \n[19] updated : Timestamp(0) | unsharded}"]
+
+    }
+    subgraph cluster_d5 {
+    label = "Domain 5";
+    style=filled;
+    color=grey97;
+        n19 [style="filled", fillcolor="/set312/6", label="{ 19 / l1 | (egress) | unsharded }"]
+    n6 [style="filled", fillcolor="/set312/6", label="{ { 6 / l0 / imdb.title_genre | B | ● &nbsp;(~17408190) } | [0] title_id : Int, \n[1] genre : VarChar(20) | unsharded }"]
+
+    }
+    subgraph cluster_d1 {
+    label = "Domain 1";
+    style=filled;
+    color=grey97;
+        n2 [style="filled", fillcolor="/set312/2", label="{ 2 / l0 | dropped }"]
+
+    }
+    n0 [style="filled", fillcolor=white, label="(source)"]
+    subgraph cluster_d3 {
+    label = "Domain 3";
+    style=filled;
+    color=grey97;
+        n4 [style="filled", fillcolor="/set312/4", label="{ 4 / l0 | dropped }"]
+
+    }
+    n0 -> n1 [ style=invis ]
+    n0 -> n2 [ style=invis ]
+    n0 -> n3 [ style=invis ]
+    n0 -> n4 [ style=invis ]
+    n0 -> n5 [ style=invis ]
+    n0 -> n6 [ style=invis ]
+    n0 -> n7 [ style=invis ]
+    n0 -> n8 [ style=invis ]
+    n0 -> n9 [ style=invis ]
+    n0 -> n10 [ style=invis ]
+    n5 -> n11 [  ]
+    n11 -> n14 [  ]
+    n13 -> n12 [  ]
+    n14 -> n13 [ color="#CCCCCC" ]
+    n6 -> n19 [  ]
+    n5 -> n15 [  ]
+    n15 -> n16 [  ]
+    n16 -> n21 [  ]
+    n18 -> n15 [  ]
+    n19 -> n18 [ color="#CCCCCC" ]
+    n20 -> n17 [  ]
+    n21 -> n20 [ color="#CCCCCC" ]
+    n5 -> n26 [  ]
+    n7 -> n22 [  ]
+    n22 -> n23 [  ]
+    n23 -> n28 [  ]
+    n25 -> n22 [  ]
+    n26 -> n25 [ color="#CCCCCC" ]
+    n27 -> n24 [  ]
+    n28 -> n27 [ color="#CCCCCC" ]
+    n8 -> n34 [  ]
+    n5 -> n29 [  ]
+    n9 -> n36 [  ]
+    n29 -> n30 [  ]
+    n30 -> n31 [  ]
+    n31 -> n38 [  ]
+    n33 -> n29 [  ]
+    n34 -> n33 [ color="#CCCCCC" ]
+    n35 -> n30 [  ]
+    n36 -> n35 [ color="#CCCCCC" ]
+    n37 -> n32 [  ]
+    n38 -> n37 [ color="#CCCCCC" ]
+    n10 -> n44 [  ]
+    n9 -> n39 [  ]
+    n39 -> n46 [  ]
+    n5 -> n40 [  ]
+    n40 -> n41 [  ]
+    n41 -> n48 [  ]
+    n43 -> n39 [  ]
+    n44 -> n43 [ color="#CCCCCC" ]
+    n45 -> n40 [  ]
+    n46 -> n45 [ color="#CCCCCC" ]
+    n47 -> n42 [  ]
+    n48 -> n47 [ color="#CCCCCC" ]
+}

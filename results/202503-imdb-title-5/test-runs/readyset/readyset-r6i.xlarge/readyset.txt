@@ -1,0 +1,223 @@
+mysql> source show.sql
+--------------
+SHOW READYSET VERSION
+--------------
+
++--------------------+------------------------------------------+
+| ReadySet           | Version Information                      |
++--------------------+------------------------------------------+
+| release version    | stable-250123                            |
+| commit id          | 804128f2ccf859a0e1efb281aceeaba0d34b15ae |
+| platform           | x86_64-unknown-linux-gnu                 |
+| rustc version      | rustc 1.84.0 (9fc6b4312 2025-01-07)      |
+| profile            | release                                  |
+| optimization level | 3                                        |
++--------------------+------------------------------------------+
+6 rows in set (0.00 sec)
+
+--------------
+SHOW READYSET STATUS
+--------------
+
++----------------------------+--------------------------------+
+| Variable_name              | Value                          |
++----------------------------+--------------------------------+
+| Database Connection        | Connected                      |
+| Connection Count           | 1                              |
+| Snapshot Status            | Completed                      |
+| Maximum Replication Offset | mysql-bin-changelog.011293:544 |
+| Minimum Replication Offset | mysql-bin-changelog.011293:544 |
+| Last started Controller    | 2025-03-19 21:24:21 UTC        |
+| Last completed snapshot    | 2025-03-19 21:27:20 UTC        |
+| Last started replication   | 2025-03-19 21:27:20 UTC        |
++----------------------------+--------------------------------+
+8 rows in set (0.05 sec)
+
+--------------
+SHOW READYSET STATUS ADAPTER
+--------------
+
++------------------------------------+-------------------------+
+| Variable_name                      | Value                   |
++------------------------------------+-------------------------+
+| Connected clients count            | 1                       |
+| Upstream database connection count | 2                       |
+| Query parse failures               | 0                       |
+| SET statement disallowed count     | 0                       |
+| View not found count               | 0                       |
+| RPC error count                    | 0                       |
+| Process start time                 | 2025-03-19 21:24:21 UTC |
++------------------------------------+-------------------------+
+7 rows in set (0.00 sec)
+
+--------------
+SHOW CONNECTIONS
+--------------
+
++-----------------+
+| remote_addr     |
++-----------------+
+| 127.0.0.1:35702 |
++-----------------+
+1 row in set (0.00 sec)
+
+--------------
+SHOW READYSET TABLES
+--------------
+
++----------------+-------------+-------------+
+| table          | status      | description |
++----------------+-------------+-------------+
+| `imdb`.`title` | Snapshotted |             |
++----------------+-------------+-------------+
+1 row in set (0.00 sec)
+
+--------------
+SHOW CACHES
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+SHOW PROXIED QUERIES
+--------------
+
++--------------------+----------------+--------------------+-------+
+| query id           | proxied query  | readyset supported | count |
++--------------------+----------------+--------------------+-------+
+| q_95844e527a191a7b | show databases | unsupported        |     0 |
++--------------------+----------------+--------------------+-------+
+1 row in set (0.00 sec)
+
+mysql> show readyset tables;
+--------------
+show readyset tables
+--------------
+
++-------------------------------+-------------+-------------+
+| table                         | status      | description |
++-------------------------------+-------------+-------------+
+| `imdb`.`name`                 | Snapshotted |             |
+| `imdb`.`title`                | Snapshotted |             |
+| `imdb`.`title_genre`          | Snapshotted |             |
+| `imdb`.`title_name_character` | Snapshotted |             |
+| `imdb`.`title_principal`      | Snapshotted |             |
+| `imdb`.`title_rating`         | Snapshotted |             |
++-------------------------------+-------------+-------------+
+6 rows in set (0.00 sec)
+
+
+
+mysql> SHOW CACHES;
+--------------
+SHOW CACHES
+--------------
+
++--------------------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+-------+
+| query id           | cache name         | query text                                                                                                                                                                                                                                                                                                                                                                              | fallback behavior | count |
++--------------------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+-------+
+| q_d4ac544dd05a54f6 | q_d4ac544dd05a54f6 | SELECT `imdb`.`title`.`title_id`, `imdb`.`title`.`tconst`, `imdb`.`title`.`type`, `imdb`.`title`.`title`, `imdb`.`title`.`original_title`, `imdb`.`title`.`is_adult`, `imdb`.`title`.`start_year`, `imdb`.`title`.`end_year`, `imdb`.`title`.`run_time_mins`, `imdb`.`title`.`updated` FROM `imdb`.`title` WHERE ((`imdb`.`title`.`title` = $1) AND (`imdb`.`title`.`type` = $2))       | fallback allowed  | 0     |
+| q_e9be53304cb3503b | q_e9be53304cb3503b | SELECT `imdb`.`title_genre`.`genre` FROM `imdb`.`title_genre` JOIN `imdb`.`title` ON (`imdb`.`title_genre`.`title_id` = `imdb`.`title`.`title_id`) WHERE ((`imdb`.`title`.`title` = $1) AND (`imdb`.`title`.`type` = $2))                                                                                                                                                               | fallback allowed  | 0     |
+| q_9e534bf4da3adc8c | q_9e534bf4da3adc8c | SELECT `imdb`.`title`.`title`, `imdb`.`title_rating`.`average_rating`, `imdb`.`title_rating`.`num_votes` FROM `imdb`.`title` JOIN `imdb`.`title_rating` ON (`imdb`.`title`.`title_id` = `imdb`.`title_rating`.`title_id`) WHERE ((`imdb`.`title`.`title` = $1) AND (`imdb`.`title`.`type` = $2))                                                                                        | fallback allowed  | 0     |
+| q_e98213f9fe7761ad | q_e98213f9fe7761ad | SELECT `imdb`.`name`.`name` AS `name`, `imdb`.`title_name_character`.`character_name` FROM `imdb`.`name` JOIN `imdb`.`title_name_character` ON (`imdb`.`name`.`name_id` = `imdb`.`title_name_character`.`name_id`) JOIN `imdb`.`title` ON (`imdb`.`title`.`title_id` = `imdb`.`title_name_character`.`title_id`) WHERE ((`imdb`.`title`.`title` = $1) AND (`imdb`.`title`.`type` = $2)) | fallback allowed  | 0     |
+| q_415b6a680a2b66dd | q_415b6a680a2b66dd | SELECT `imdb`.`name`.`name`, `imdb`.`title_principal`.`category` FROM `imdb`.`title_principal` JOIN `imdb`.`title` ON (`imdb`.`title`.`title_id` = `imdb`.`title_principal`.`title_id`) JOIN `imdb`.`name` ON (`imdb`.`name`.`name_id` = `imdb`.`title_principal`.`name_id`) WHERE ((`imdb`.`title`.`title` = $1) AND (`imdb`.`title`.`type` = $2))                                     | fallback allowed  | 0     |
++--------------------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+-------+
+5 rows in set (0.00 sec)
+
+
+mysql> explain materializations;
+--------------
+explain materializations
+--------------
+
++--------------+------------+---------------------------+----------------------------------------------------------------------------------------+-----------+------------+---------+------------------------------------------+
+| domain_index | node_index | node_name                 | node_description                                                                       | keys      | size_bytes | partial | indexes                                  |
++--------------+------------+---------------------------+----------------------------------------------------------------------------------------+-----------+------------+---------+------------------------------------------+
+| 9            |         10 | imdb.title_principal      | B                                                                                      | ~89736004 | 4998211313 |       0 | HashMap[0, 1, 2], HashMap[0], HashMap[1] |
+| 7            |          8 | imdb.title_name_character | B                                                                                      | ~43605612 | 2436776981 |       0 | HashMap[0], HashMap[2], HashMap[1]       |
+| 4            |          5 | imdb.title                | B                                                                                      | ~11131061 |  751945539 |       0 | HashMap[0], HashMap[2, 3]                |
+| 5            |          6 | imdb.title_genre          | B                                                                                      | ~17408190 |  483418493 |       0 | HashMap[0]                               |
+| 8            |          9 | imdb.name                 | B                                                                                      | ~14235647 |  478493827 |       0 | HashMap[0]                               |
+| 6            |          7 | imdb.title_rating         | B                                                                                      | ~1518890  |   28396830 |       0 | HashMap[0]                               |
+| 4            |         45 | q_af34021134694bc_n29     | →|                                                                                     | 2357      |    8499586 |       1 | HashMap[0]                               |
+| 8            |         43 | imdb.title_principal      | →|                                                                                     | 2357      |    5111183 |       1 | HashMap[1], HashMap[0]                   |
+| 4            |         29 | q_e639fb0e7684abdb_n22    | [33:0, 33:1, 33:2, 33:3, 5:1, 5:2, 5:3, 5:4, 5:5, 5:6, 5:7, 5:8, 5:9] 33:(1) ⋈ 5:(0)   | 963       |    4472917 |       1 | HashMap[2], HashMap[5, 6]                |
+| 14           |         42 | q_415b6a680a2b66dd        | R                                                                                      | 963       |    4382291 |       1 | HashMap[2, 3]                            |
+| 13           |         32 | q_e98213f9fe7761ad        | R                                                                                      | 963       |    2081082 |       1 | HashMap[2, 3]                            |
+| 4            |         35 | imdb.name                 | →|                                                                                     | 11557     |    1749462 |       1 | HashMap[0]                               |
+| 4            |         33 | imdb.title_name_character | →|                                                                                     | 2357      |    1653868 |       1 | HashMap[1], HashMap[2]                   |
+| 10           |         12 | q_d4ac544dd05a54f6        | R                                                                                      | 963       |     670186 |       1 | HashMap[2, 3]                            |
+| 11           |         17 | q_e9be53304cb3503b        | R                                                                                      | 963       |     583539 |       1 | HashMap[1, 2]                            |
+| 6            |         25 | imdb.title                | →|                                                                                     | 963       |     523810 |       1 | HashMap[2, 3], HashMap[0]                |
+| 12           |         24 | q_9e534bf4da3adc8c        | R                                                                                      | 963       |     366995 |       1 | HashMap[3, 0]                            |
+| 4            |         18 | imdb.title_genre          | →|                                                                                     | 2357      |     322960 |       1 | HashMap[0]                               |
+| 2            |          3 | imdb.title_rating         | ☒                                                                                      | 0         |          0 |       0 | HashMap[0]                               |
+| 3            |          4 | imdb.title_principal      | ☒                                                                                      | 0         |          0 |       0 | HashMap[0, 1, 2]                         |
+| 1            |          2 | imdb.title_genre          | ☒                                                                                      | 0         |          0 |       0 | HashMap[0]                               |
+| 0            |          1 | imdb.title                | ☒                                                                                      | 0         |          0 |       0 | HashMap[0]                               |
++--------------+------------+---------------------------+----------------------------------------------------------------------------------------+-----------+------------+---------+------------------------------------------+
+22 rows in set (0.00 sec)
+
+mysql> explain last statement;
+--------------
+explain last statement
+--------------
+
++-------------------+----------------+
+| Query_destination | ReadySet_error |
++-------------------+----------------+
+| readyset          | ok             |
++-------------------+----------------+
+1 row in set (0.00 sec)
+
+mysql> explain domains;
+--------------
+explain domains
+--------------
+
++--------+------------------------+
+| domain | worker                 |
++--------+------------------------+
+| 14.0.0 | http://127.0.0.1:6033/ |
+| 9.0.0  | http://127.0.0.1:6033/ |
+| 1.0.0  | http://127.0.0.1:6033/ |
+| 12.0.0 | http://127.0.0.1:6033/ |
+| 7.0.0  | http://127.0.0.1:6033/ |
+| 4.0.0  | http://127.0.0.1:6033/ |
+| 3.0.0  | http://127.0.0.1:6033/ |
+| 6.0.0  | http://127.0.0.1:6033/ |
+| 10.0.0 | http://127.0.0.1:6033/ |
+| 2.0.0  | http://127.0.0.1:6033/ |
+| 5.0.0  | http://127.0.0.1:6033/ |
+| 13.0.0 | http://127.0.0.1:6033/ |
+| 0.0.0  | http://127.0.0.1:6033/ |
+| 8.0.0  | http://127.0.0.1:6033/ |
+| 11.0.0 | http://127.0.0.1:6033/ |
++--------+------------------------+
+15 rows in set (0.00 sec)
+
+mysql> explain connections;
+--------------
+explain connections
+--------------
+
+ERROR 1146 (42S02): Table 'imdb.connections' doesn't exist
+mysql> SHOW CONNECTIONS;
+--------------
+SHOW CONNECTIONS
+--------------
+
++-----------------+
+| remote_addr     |
++-----------------+
+| 127.0.0.1:54232 |
+| 127.0.0.1:54234 |
+| 127.0.0.1:54248 |
+| 127.0.0.1:54260 |
+| 127.0.0.1:54270 |
+| 127.0.0.1:54286 |
+| 127.0.0.1:54290 |
+| 127.0.0.1:54298 |
+| 127.0.0.1:57272 |
++-----------------+
+9 rows in set (0.00 sec)
