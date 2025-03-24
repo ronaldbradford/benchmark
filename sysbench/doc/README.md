@@ -2,6 +2,8 @@
 
 [Sysbench](https://github.com/akopytov/sysbench/) is a popular open-source benchmarking tool designed to evaluate the performance of system components such as CPU, memory, disk I/O, and databases. It is commonly used for testing MySQL, PostgreSQL, and other databases under different load conditions.
 
+Created by Alexey Kopytov, `sysbench` has been around for approximately two decades. While `git` shows the first commit as `Jan 2006` this product was previously hosted on [Launchpad](https://launchpad.net/sysbench). The [ChangeLog](https://github.com/akopytov/sysbench/blob/master/ChangeLog) has a first reference of 2004-02-19. The current version is `1.0.20` however there has not been a version release in the past 5 years.
+
 ## Database Benchmarking
 
 `sysbench` supports benchmarking of open source databases including [MySQL](https://www.mysql.com), [MariaDB](https://mariadb.org/), [PostgreSQL](https://postgres.org), [RocksDB](https://rocksdb.org/). PRs to support other RDBMS products, for example [SQLServer #PR549](https://github.com/akopytov/sysbench/pull/549) also exist.
