@@ -1,0 +1,24 @@
+[20250320.171920+0000] INFO:  Executing 'title' (-warmup)  with '2' threads for '600' secs. Details in 'log/20250320.171920.title-warmup.0002.txt'
+[20250320.171920+0000] INFO:  ---  tail -f log/20250320.171920.title-warmup.0002.txt
+[20250320.172920+0000] INFO:  Warmdown for '120' secs
+[20250320.173120+0000] INFO:  Starting benchmark, running with '4 8 16 32 64 96 128' threads
+[20250320.173120+0000] INFO:  Executing 'title' ()  with '4' threads for '600' secs. Details in 'log/20250320.171920.title.0004.txt'
+[20250320.173120+0000] INFO:  ---  tail -f log/20250320.171920.title.0004.txt
+[20250320.174120+0000] INFO:  Warmdown for '120' secs
+[20250320.174320+0000] INFO:  Executing 'title' ()  with '8' threads for '600' secs. Details in 'log/20250320.171920.title.0008.txt'
+[20250320.174320+0000] INFO:  ---  tail -f log/20250320.171920.title.0008.txt
+[20250320.175320+0000] INFO:  Warmdown for '120' secs
+[20250320.175520+0000] INFO:  Executing 'title' ()  with '16' threads for '600' secs. Details in 'log/20250320.171920.title.0016.txt'
+[20250320.175520+0000] INFO:  ---  tail -f log/20250320.171920.title.0016.txt
+[20250320.180520+0000] INFO:  Warmdown for '120' secs
+[20250320.180720+0000] INFO:  Executing 'title' ()  with '32' threads for '600' secs. Details in 'log/20250320.171920.title.0032.txt'
+[20250320.180720+0000] INFO:  ---  tail -f log/20250320.171920.title.0032.txt
+[20250320.181721+0000] INFO:  Warmdown for '120' secs
+[20250320.181921+0000] INFO:  Executing 'title' ()  with '64' threads for '600' secs. Details in 'log/20250320.171920.title.0064.txt'
+[20250320.181921+0000] INFO:  ---  tail -f log/20250320.171920.title.0064.txt
+[20250320.182921+0000] INFO:  Warmdown for '120' secs
+[20250320.183121+0000] INFO:  Executing 'title' ()  with '96' threads for '600' secs. Details in 'log/20250320.171920.title.0096.txt'
+[20250320.183121+0000] INFO:  ---  tail -f log/20250320.171920.title.0096.txt
+[20250320.184122+0000] INFO:  Warmdown for '120' secs
+[20250320.184322+0000] INFO:  Executing 'title' ()  with '128' threads for '600' secs. Details in 'log/20250320.171920.title.0128.txt'
+[20250320.184322+0000] INFO:  ---  tail -f log/20250320.171920.title.0128.txt

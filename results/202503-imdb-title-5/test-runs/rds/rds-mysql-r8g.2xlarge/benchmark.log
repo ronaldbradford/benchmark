@@ -1,0 +1,72 @@
+[20250320.224052+0000] INFO:  Executing 'title' (-warmup)  with '2' threads for '600' secs. Details in 'log/20250320.224052.title-warmup.0002.txt'
+[20250320.224052+0000] INFO:  ---  tail -f log/20250320.224052.title-warmup.0002.txt
+[20250320.225052+0000] INFO:  Warmdown for '120' secs
+[20250320.225252+0000] INFO:  Starting benchmark, running with '4 8 16 32 64 96 128' threads
+[20250320.225252+0000] INFO:  Executing 'title' ()  with '4' threads for '600' secs. Details in 'log/20250320.224052.title.0004.txt'
+[20250320.225252+0000] INFO:  ---  tail -f log/20250320.224052.title.0004.txt
+[20250320.230252+0000] INFO:  Warmdown for '120' secs
+[20250320.230452+0000] INFO:  Executing 'title' ()  with '8' threads for '600' secs. Details in 'log/20250320.224052.title.0008.txt'
+[20250320.230452+0000] INFO:  ---  tail -f log/20250320.224052.title.0008.txt
+[20250320.231452+0000] INFO:  Warmdown for '120' secs
+[20250320.231652+0000] INFO:  Executing 'title' ()  with '16' threads for '600' secs. Details in 'log/20250320.224052.title.0016.txt'
+[20250320.231652+0000] INFO:  ---  tail -f log/20250320.224052.title.0016.txt
+[20250320.232652+0000] INFO:  Warmdown for '120' secs
+[20250320.232852+0000] INFO:  Executing 'title' ()  with '32' threads for '600' secs. Details in 'log/20250320.224052.title.0032.txt'
+[20250320.232852+0000] INFO:  ---  tail -f log/20250320.224052.title.0032.txt
+[20250320.233852+0000] INFO:  Warmdown for '120' secs
+[20250320.234052+0000] INFO:  Executing 'title' ()  with '64' threads for '600' secs. Details in 'log/20250320.224052.title.0064.txt'
+[20250320.234052+0000] INFO:  ---  tail -f log/20250320.224052.title.0064.txt
+[20250320.235053+0000] INFO:  Warmdown for '120' secs
+[20250320.235253+0000] INFO:  Executing 'title' ()  with '96' threads for '600' secs. Details in 'log/20250320.224052.title.0096.txt'
+[20250320.235253+0000] INFO:  ---  tail -f log/20250320.224052.title.0096.txt
+[20250321.000254+0000] INFO:  Warmdown for '120' secs
+[20250321.000454+0000] INFO:  Executing 'title' ()  with '128' threads for '600' secs. Details in 'log/20250320.224052.title.0128.txt'
+[20250321.000454+0000] INFO:  ---  tail -f log/20250320.224052.title.0128.txt
+log/20250320.224052.title.0004.txt:Latency (ms):
+log/20250320.224052.title.0004.txt-         min:                                    4.85
+log/20250320.224052.title.0004.txt-         avg:                                    5.40
+log/20250320.224052.title.0004.txt-         max:                                   28.66
+log/20250320.224052.title.0004.txt-         95th percentile:                        6.09
+log/20250320.224052.title.0004.txt-         sum:                              2399750.42
+--
+log/20250320.224052.title.0008.txt:Latency (ms):
+log/20250320.224052.title.0008.txt-         min:                                    4.92
+log/20250320.224052.title.0008.txt-         avg:                                    5.49
+log/20250320.224052.title.0008.txt-         max:                                   19.80
+log/20250320.224052.title.0008.txt-         95th percentile:                        6.21
+log/20250320.224052.title.0008.txt-         sum:                              4799459.48
+--
+log/20250320.224052.title.0016.txt:Latency (ms):
+log/20250320.224052.title.0016.txt-         min:                                    4.93
+log/20250320.224052.title.0016.txt-         avg:                                    5.55
+log/20250320.224052.title.0016.txt-         max:                                   42.03
+log/20250320.224052.title.0016.txt-         95th percentile:                        6.32
+log/20250320.224052.title.0016.txt-         sum:                              9598829.92
+--
+log/20250320.224052.title.0032.txt:Latency (ms):
+log/20250320.224052.title.0032.txt-         min:                                    4.98
+log/20250320.224052.title.0032.txt-         avg:                                    5.85
+log/20250320.224052.title.0032.txt-         max:                                   54.98
+log/20250320.224052.title.0032.txt-         95th percentile:                        6.79
+log/20250320.224052.title.0032.txt-         sum:                             19197614.45
+--
+log/20250320.224052.title.0064.txt:Latency (ms):
+log/20250320.224052.title.0064.txt-         min:                                    5.11
+log/20250320.224052.title.0064.txt-         avg:                                    7.02
+log/20250320.224052.title.0064.txt-         max:                                   94.36
+log/20250320.224052.title.0064.txt-         95th percentile:                        9.22
+log/20250320.224052.title.0064.txt-         sum:                             38395794.05
+--
+log/20250320.224052.title.0096.txt:Latency (ms):
+log/20250320.224052.title.0096.txt-         min:                                    5.24
+log/20250320.224052.title.0096.txt-         avg:                                   10.07
+log/20250320.224052.title.0096.txt-         max:                                  223.62
+log/20250320.224052.title.0096.txt-         95th percentile:                       19.29
+log/20250320.224052.title.0096.txt-         sum:                             57596418.46
+--
+log/20250320.224052.title.0128.txt:Latency (ms):
+log/20250320.224052.title.0128.txt-         min:                                    5.22
+log/20250320.224052.title.0128.txt-         avg:                                   13.64
+log/20250320.224052.title.0128.txt-         max:                                  429.07
+log/20250320.224052.title.0128.txt-         95th percentile:                       27.17
+log/20250320.224052.title.0128.txt-         sum:                             76798087.37
