@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -o pipefail
-set -o nounset
-set -o errexit
+#set -o nounset
+#set -o errexit
 
 ### 
 ### This script helper builds any necessary software from source
@@ -31,7 +31,7 @@ get-repo() {
     git pull
   else 
     info "Cloning repo..."   
-    git clone https://github.com/akopytov/${PROJECT}.git
+    git clone https://github.com/ronaldbradford/${PROJECT}.git
     cd "${PROJECT}" || error "Unable to change to '{PROJECT}' directory"
   fi
   ls
