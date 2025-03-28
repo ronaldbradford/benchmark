@@ -10,7 +10,7 @@ rm -f ${INPUT_FILE_PATTERN}*.tsv
 (
 echo "Threads,Avg,95th,Transactions"
 for INPUT_FILE in $(ls ${INPUT_FILE_PATTERN}*.txt); do
-  N=$(cut -f4 -d'.' <<< ${INPUT_FILE} | tr -d '0')
+  N=$(cut -f4 -d'.' <<< ${INPUT_FILE} | sed 's/^0*//')
   AVG_VALUE=$(grep "avg:" ${INPUT_FILE} | awk '{print $2}')
   MAX_VALUE=$(grep "95th percentile:" ${INPUT_FILE} | awk '{print $3}')
   TRANSACTIONS=$(grep "transactions:" ${INPUT_FILE} | tr -d '()' |  awk '{print $3}')
