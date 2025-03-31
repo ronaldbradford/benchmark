@@ -20,3 +20,10 @@ Threads,Test,Transactions
 64,readyset-r6i.2xlarge,22955.33
 96,readyset-r6i.2xlarge,23242.23
 128,readyset-r6i.2xlarge,23361.20
+4,readyset-r6i.4xlarge,14889.76
+8,readyset-r6i.4xlarge,25268.46
+16,readyset-r6i.4xlarge,34211.40
+32,readyset-r6i.4xlarge,38742.27
+64,readyset-r6i.4xlarge,41792.55
+96,readyset-r6i.4xlarge,43155.83
+128,readyset-r6i.4xlarge,43935.34
