@@ -17,3 +17,12 @@ Threads,Test,Transactions
 128,rds-mysql-r6g.4xlarge,9380.89
 160,rds-mysql-r6g.4xlarge,9141.95
 192,rds-mysql-r6g.4xlarge,9254.01
+4,rds-mysql-r6g.8xlarge,692.60
+8,rds-mysql-r6g.8xlarge,1377.46
+16,rds-mysql-r6g.8xlarge,2719.14
+32,rds-mysql-r6g.8xlarge,5217.34
+64,rds-mysql-r6g.8xlarge,9780.35
+96,rds-mysql-r6g.8xlarge,13681.33
+128,rds-mysql-r6g.8xlarge,15924.64
+160,rds-mysql-r6g.8xlarge,17189.91
+192,rds-mysql-r6g.8xlarge,17674.07
