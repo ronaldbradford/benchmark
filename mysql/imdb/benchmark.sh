@@ -15,7 +15,7 @@ WARMDOWN_TIME="${WARMDOWN_TIME:-120}"
 LOG_DIR="${LOG_DIR:-log}"
 TEST_NAME="${TEST_NAME:-name}"
 CONFIG_FILE="${CONFIG_FILE:-sysbench.cnf}"
-
+TLS="${TLS:-off}"
 
 info() {
   NOW=$(date +%Y%m%d.%H%M%S%z)
@@ -37,9 +37,9 @@ run-test() {
   info "Executing '${TEST_NAME}' ($LOG_SUFFIX)  with '${TEST_THREADS}' threads for '${TEST_TIME}' secs. Details in '${LOG_FILE}'"
   info "---  tail -f ${LOG_FILE}"
   sysbench --config-file="${CONFIG_FILE}" \
-	   --mysql-ssl=off --report-interval=1 --histogram=1 \
+           --mysql-ssl=off --report-interval=1 --histogram=1 \
            --threads="${TEST_THREADS}" --time=${TEST_TIME} --type="${TEST_NAME}" \
-	   core.lua run > ${LOG_FILE} 2>&1 
+           core.lua run > ${LOG_FILE} 2>&1
 }
 
 
@@ -80,5 +80,5 @@ main() {
 }
 
 
-main "$*" 
+main "$*"
 exit 0

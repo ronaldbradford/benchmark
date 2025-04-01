@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+PYTHON=${PYTHON:-python}
 
 [[ $# -eq 0 ]] && exit 1
 # log/20250309.134152.name.0032.txt > 0032.txt
@@ -21,7 +22,7 @@ found && NF >= 3 {
   echo "${OUTPUT_FILE}"
 done
 
-python plot-latency.py ${INPUT_FILE_PATTERN}*.tsv
+${PYTHON} plot-latency.py ${INPUT_FILE_PATTERN}*.tsv
 PNG_FILE="${INPUT_FILE_PATTERN}latency.png"
 echo "Target image: '${PNG_FILE}'"
 mv latency_chart.png "${PNG_FILE}"
